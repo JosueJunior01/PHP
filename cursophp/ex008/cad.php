@@ -11,10 +11,10 @@
         <h1>Resultado Final</h1>
         <?php 
             $real = $_GET["numero"];
-            $numFloat = (float) $real;
-            $conversor = number_format($numFloat / 5.06, 2, ',','.');
+            $dolar = $real / 5.06;
+            $padraoMoedas = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
 
-            echo "Seus R$ $real equivalem a US$ $conversor<br>";
+            echo "Seus" . numfmt_format_currency($padraoMoedas, $real, "BRL") . "a" . numfmt_format_currency($padraoMoedas, $dolar, "USD") . "<br>";
 
             echo "<strong>Cotação fixa de R$5,06</strong> informada diretamente no código"
         ?>
