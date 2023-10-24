@@ -12,7 +12,7 @@
         <?php 
             $real = $_GET["numero"];
             $numFloat = (float) $real;
-            $conversor = number_format($numFloat / 5.06, 2, ',','');
+            $conversor = number_format($numFloat / 5.06, 2, ',','.');
 
             echo "Seus R$ $real equivalem a US$ $conversor<br>";
 
